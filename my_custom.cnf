@@ -1,3 +1,4 @@
 [mysqld]
 max_allowed_packet=256M
 net_read_timeout=600
+sql_mode=""
