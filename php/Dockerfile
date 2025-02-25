@@ -28,7 +28,7 @@ WORKDIR /var/www/html
 COPY vhosts /etc/apache2/sites-available/
 
 # Enable virtual hosts
-RUN a2ensite finditfunditflorida.conf fififl.site-domain.conf \
+RUN a2ensite hiddenbeachesofnosara.conf hiddenbeachesofnosara.site-domain.conf \
     && service apache2 restart
 
 # Install necessary extensions
