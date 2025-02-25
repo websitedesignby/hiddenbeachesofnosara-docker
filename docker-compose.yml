@@ -1,19 +1,6 @@
 # version: '3.8'
 
 services:
-  nginx:
-    image: nginx
-    container_name: nginx_proxy
-    restart: always
-    ports: 
-      - "9191:80"
-      - "444:443"
-    volumes:
-      - ./nginx/conf.d:/etc/nginx/conf.d
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
-    depends_on:
-      - apache
   apache:
     build: ./php
     container_name: apache_php
@@ -51,13 +38,6 @@ services:
     environment:
       PMA_HOST: mysql
       MYSQL_ROOT_PASSWORD: root
-  
-  certbot:
-    image: certbot/certbot
-    container_name: certbot
-    volumes:
-      - ./certbot/conf:/etc/letsencrypt
-      - ./certbot/www:/var/www/certbot
       
 volumes:
   mysql_data:
