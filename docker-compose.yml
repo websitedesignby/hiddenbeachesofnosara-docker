@@ -19,7 +19,8 @@ services:
     container_name: apache_php
     restart: always
     ports:
-      - "9090:80"
+      - "80:80"
+      - "443:443"
     volumes:
       - "./www:/var/www/html"  # Mount the application code
       - "./php/vhosts:/etc/apache2/sites-enabled"  # Mount custom virtual hosts
